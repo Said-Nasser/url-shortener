@@ -1,0 +1,326 @@
+/* media query mixin
+===================== */
+@mixin minMediaQuery($width) {
+    @media screen and (min-width: $width) {
+        @content;
+    }
+}
+@mixin maxMediaQuery($width) {
+    @media screen and (max-width: $width) {
+        @content;
+    }
+}
+// @font-face {
+//     src: url(../webfonts/fa-solid-900.ttf), url(../webfonts/fa-regular-400.ttf);
+//     font-family: "fontawesome";
+// }
+// @font-face {
+//     src: url(https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap);
+//     font-family: "Rubik Mono One", sans-serif;
+// }
+
+// Colors
+// ### Primary
+
+$Cyan: hsl(180, 66%, 49%);
+$Dark-Violet: hsl(257, 27%, 26%);
+
+// ### Secondary
+
+$Red: hsl(0, 87%, 67%);
+
+// ### Neutral
+
+$Gray: hsl(0, 0%, 75%);
+$Grayish-Violet: hsl(257, 7%, 63%);
+$Very-Dark-Blue: hsl(255, 11%, 22%);
+$Very-Dark-Violet: hsl(260, 8%, 14%);
+
+/*---------------------------------------------------------------------------------------------*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+body {
+    overflow-x: hidden;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+}
+
+/*------------------------------------------ Navbar -----------------------------------------*/
+nav#navbar {
+    #navbar-collapse {
+        ul {
+            a.sign-up {
+                background-color: rgba($Cyan, 0.8);
+                color: #fff;
+                padding: 10px 13px;
+                border: none;
+                border-radius: 30px;
+                text-decoration: none;
+                transition: background-color 0.3s;
+                &:hover {
+                    background-color: rgba($Cyan, 1);
+                }
+            }
+        }
+    }
+    button {
+        border: none;
+    }
+}
+@media screen and (max-width: 768px) {
+    nav#navbar {
+        #navbar-collapse {
+            background-color: $Dark-Violet;
+            padding: 15px;
+            border-radius: 20px;
+            text-align: center;
+        }
+        .navbar-nav .nav-link {
+            color: #fff !important;
+        }
+    }
+}
+/*------------------------------------------ Main Header -----------------------------------------*/
+header#main-header {
+    background-image: url(../images/illustration-working.svg);
+    background-repeat: no-repeat;
+    background-position: 110% 30%;
+    min-height: 80vh;
+    padding-top: 10rem;
+    h1 {
+        font-weight: bold;
+    }
+    > div {
+        margin-left: 8rem;
+    }
+    p {
+        margin: 2rem 0;
+    }
+    a {
+        background-color: rgba($Cyan, 0.8);
+        color: #fff;
+        padding: 10px 13px;
+        border: none;
+        text-decoration: none;
+        border-radius: 30px;
+        transition: background-color 0.3s;
+        &:hover {
+            background-color: rgba($Cyan, 1);
+        }
+    }
+}
+@media screen and (max-width: 991px) {
+    header#main-header {
+        padding-top: 10rem;
+        background-position: 120% 30%;
+        background-size: 80%;
+        > div {
+            margin-left: 5rem;
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    header#main-header {
+        padding-top: 15rem;
+        background-position: 140% 30%;
+        background-size: 90%;
+        > div {
+            margin-left: 5rem;
+        }
+    }
+}
+@media screen and (max-width: 576px) {
+    header#main-header {
+        padding-top: 25rem;
+        background-position: 100% 30%;
+        background-size: 90%;
+        > div {
+            margin-left: 0;
+        }
+    }
+}
+/*------------------------------------------ Form Container -----------------------------------------*/
+section#form-container {
+    background-color: $Gray;
+    padding: 0rem 0 2rem;
+    margin-top: 9rem;
+    form {
+        position: relative;
+        top: -4.5rem;
+        width: 70%;
+        margin: 0 auto;
+        padding: 3rem;
+        border-radius: 10px;
+        background-image: linear-gradient(rgba($Dark-Violet, 0.9), rgba($Dark-Violet, 0.9)),
+            url(../images/bg-boost-desktop.svg);
+        background-position: center;
+        background-size: cover;
+        &.error {
+            input {
+                border: 1px solid red !important;
+                &::placeholder {
+                    color: red !important;
+                }
+            }
+            .error-message {
+                display: block !important;
+                color: red;
+                font-style: italic;
+            }
+        }
+    }
+    button {
+        background-color: rgba($Cyan, 0.8);
+        color: #fff;
+        padding: 10px 13px;
+        border: none;
+        text-decoration: none;
+        transition: background-color 0.3s;
+        &:hover {
+            background-color: rgba($Cyan, 1);
+        }
+    }
+    .link-list {
+        width: 70%;
+        margin: 0 auto;
+        #link-text {
+            position: absolute;
+            opacity: 0;
+        }
+    }
+}
+@media screen and (max-width: 576px) {
+    section#form-container {
+        form {
+            width: 90%;
+            padding: 1rem;
+        }
+        .link-list {
+            width: 90%;
+        }
+        article {
+            .original-link {
+                border-bottom: 1px solid #dee2e6;
+            }
+            button {
+                display: block;
+                width: 100%;
+                margin-top: 5px;
+            }
+            a {
+                color: $Cyan;
+            }
+        }
+    }
+}
+/*------------------------------------------ Statistics -----------------------------------------*/
+section#statistics {
+    background-color: $Gray;
+    padding: 3rem 0;
+    header {
+        text-align: center;
+        margin: 0 auto 5rem;
+        h2 {
+            font-size: 1.9rem;
+        }
+    }
+    article {
+        position: relative;
+        z-index: 3;
+
+        padding-top: 2.5rem;
+        .icon {
+            position: absolute;
+            top: -35px;
+            left: 30px;
+            background-color: $Very-Dark-Blue;
+            width: 70px;
+            height: 70px;
+            padding: 20px;
+            border-radius: 50%;
+        }
+        h3 {
+            font-size: 1.2rem;
+        }
+        &:nth-child(2) {
+            margin-top: 3rem;
+        }
+        &:nth-child(3) {
+            margin-top: 6rem;
+        }
+    }
+    .cards-container {
+        position: relative;
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 40%;
+            width: 70%;
+            height: 7px;
+            margin: 0 auto;
+            z-index: 1;
+            background-color: $Cyan;
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    section#statistics {
+        article {
+            &:nth-child(2) {
+                margin-top: 3rem;
+            }
+            &:nth-child(3) {
+                margin-top: 3rem;
+            }
+        }
+        .cards-container {
+            &::after {
+                top: 0;
+                width: 8px;
+                height: 100%;
+            }
+        }
+    }
+}
+/*------------------------------------------ Boost your links -----------------------------------------*/
+section#boost-links {
+    text-align: center;
+    padding: 3rem 0;
+    background-image: linear-gradient(rgba($Dark-Violet, 0.9), rgba($Dark-Violet, 0.9)),
+        url(../images/bg-boost-desktop.svg);
+    background-position: center;
+    background-size: cover;
+    h2 {
+        color: #fff;
+        margin-bottom: 3rem;
+        font-size: 1.8rem;
+    }
+    a {
+        background-color: rgba($Cyan, 0.8);
+        color: #fff;
+        padding: 10px 13px;
+        border-radius: 30px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+        &:hover {
+            background-color: rgba($Cyan, 1);
+        }
+    }
+}
+
+/*------------------------------------------ Footer -----------------------------------------*/
+footer#footer {
+    background: $Very-Dark-Violet;
+    section {
+        h3 {
+            color: #fff;
+            font-size: 19px;
+        }
+        a {
+            color: $Grayish-Violet;
+            font-size: 14px;
+        }
+    }
+}

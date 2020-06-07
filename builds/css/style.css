@@ -1,0 +1,218 @@
+/* media query mixin
+===================== */
+/*---------------------------------------------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+body {
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px; }
+
+/*------------------------------------------ Navbar -----------------------------------------*/
+nav#navbar #navbar-collapse ul a.sign-up {
+  background-color: rgba(42, 207, 207, 0.8);
+  color: #fff;
+  padding: 10px 13px;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s; }
+  nav#navbar #navbar-collapse ul a.sign-up:hover {
+    background-color: #2acfcf; }
+
+nav#navbar button {
+  border: none; }
+
+@media screen and (max-width: 768px) {
+  nav#navbar #navbar-collapse {
+    background-color: #3b3054;
+    padding: 15px;
+    border-radius: 20px;
+    text-align: center; }
+  nav#navbar .navbar-nav .nav-link {
+    color: #fff !important; } }
+
+/*------------------------------------------ Main Header -----------------------------------------*/
+header#main-header {
+  background-image: url(../images/illustration-working.svg);
+  background-repeat: no-repeat;
+  background-position: 110% 30%;
+  min-height: 80vh;
+  padding-top: 10rem; }
+  header#main-header h1 {
+    font-weight: bold; }
+  header#main-header > div {
+    margin-left: 8rem; }
+  header#main-header p {
+    margin: 2rem 0; }
+  header#main-header a {
+    background-color: rgba(42, 207, 207, 0.8);
+    color: #fff;
+    padding: 10px 13px;
+    border: none;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.3s; }
+    header#main-header a:hover {
+      background-color: #2acfcf; }
+
+@media screen and (max-width: 991px) {
+  header#main-header {
+    padding-top: 10rem;
+    background-position: 120% 30%;
+    background-size: 80%; }
+    header#main-header > div {
+      margin-left: 5rem; } }
+
+@media screen and (max-width: 768px) {
+  header#main-header {
+    padding-top: 15rem;
+    background-position: 140% 30%;
+    background-size: 90%; }
+    header#main-header > div {
+      margin-left: 5rem; } }
+
+@media screen and (max-width: 576px) {
+  header#main-header {
+    padding-top: 25rem;
+    background-position: 100% 30%;
+    background-size: 90%; }
+    header#main-header > div {
+      margin-left: 0; } }
+
+/*------------------------------------------ Form Container -----------------------------------------*/
+section#form-container {
+  background-color: #bfbfbf;
+  padding: 0rem 0 2rem;
+  margin-top: 9rem; }
+  section#form-container form {
+    position: relative;
+    top: -4.5rem;
+    width: 70%;
+    margin: 0 auto;
+    padding: 3rem;
+    border-radius: 10px;
+    background-image: linear-gradient(rgba(59, 48, 84, 0.9), rgba(59, 48, 84, 0.9)), url(../images/bg-boost-desktop.svg);
+    background-position: center;
+    background-size: cover; }
+    section#form-container form.error input {
+      border: 1px solid red !important; }
+      section#form-container form.error input::placeholder {
+        color: red !important; }
+    section#form-container form.error .error-message {
+      display: block !important;
+      color: red;
+      font-style: italic; }
+  section#form-container button {
+    background-color: rgba(42, 207, 207, 0.8);
+    color: #fff;
+    padding: 10px 13px;
+    border: none;
+    text-decoration: none;
+    transition: background-color 0.3s; }
+    section#form-container button:hover {
+      background-color: #2acfcf; }
+  section#form-container .link-list {
+    width: 70%;
+    margin: 0 auto; }
+    section#form-container .link-list #link-text {
+      position: absolute;
+      opacity: 0; }
+
+@media screen and (max-width: 576px) {
+  section#form-container form {
+    width: 90%;
+    padding: 1rem; }
+  section#form-container .link-list {
+    width: 90%; }
+  section#form-container article .original-link {
+    border-bottom: 1px solid #dee2e6; }
+  section#form-container article button {
+    display: block;
+    width: 100%;
+    margin-top: 5px; }
+  section#form-container article a {
+    color: #2acfcf; } }
+
+/*------------------------------------------ Statistics -----------------------------------------*/
+section#statistics {
+  background-color: #bfbfbf;
+  padding: 3rem 0; }
+  section#statistics header {
+    text-align: center;
+    margin: 0 auto 5rem; }
+    section#statistics header h2 {
+      font-size: 1.9rem; }
+  section#statistics article {
+    position: relative;
+    z-index: 3;
+    padding-top: 2.5rem; }
+    section#statistics article .icon {
+      position: absolute;
+      top: -35px;
+      left: 30px;
+      background-color: #35323e;
+      width: 70px;
+      height: 70px;
+      padding: 20px;
+      border-radius: 50%; }
+    section#statistics article h3 {
+      font-size: 1.2rem; }
+    section#statistics article:nth-child(2) {
+      margin-top: 3rem; }
+    section#statistics article:nth-child(3) {
+      margin-top: 6rem; }
+  section#statistics .cards-container {
+    position: relative; }
+    section#statistics .cards-container::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 40%;
+      width: 70%;
+      height: 7px;
+      margin: 0 auto;
+      z-index: 1;
+      background-color: #2acfcf; }
+
+@media screen and (max-width: 768px) {
+  section#statistics article:nth-child(2) {
+    margin-top: 3rem; }
+  section#statistics article:nth-child(3) {
+    margin-top: 3rem; }
+  section#statistics .cards-container::after {
+    top: 0;
+    width: 8px;
+    height: 100%; } }
+
+/*------------------------------------------ Boost your links -----------------------------------------*/
+section#boost-links {
+  text-align: center;
+  padding: 3rem 0;
+  background-image: linear-gradient(rgba(59, 48, 84, 0.9), rgba(59, 48, 84, 0.9)), url(../images/bg-boost-desktop.svg);
+  background-position: center;
+  background-size: cover; }
+  section#boost-links h2 {
+    color: #fff;
+    margin-bottom: 3rem;
+    font-size: 1.8rem; }
+  section#boost-links a {
+    background-color: rgba(42, 207, 207, 0.8);
+    color: #fff;
+    padding: 10px 13px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s; }
+    section#boost-links a:hover {
+      background-color: #2acfcf; }
+
+/*------------------------------------------ Footer -----------------------------------------*/
+footer#footer {
+  background: #232127; }
+  footer#footer section h3 {
+    color: #fff;
+    font-size: 19px; }
+  footer#footer section a {
+    color: #9e9aa7;
+    font-size: 14px; }
+
+/*# sourceMappingURL=style.css.map */
